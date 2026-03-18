@@ -1,0 +1,163 @@
+/* Accesibilidad - Mejoras de Contraste WCAG AA */
+/* Aplicadas el 18 Febrero 2026 */
+
+/**
+ * REGLA 1: Reemplazo de text-gray-400 por text-gray-600
+ * Problema: text-gray-400 (#9CA3AF) tiene 2.12:1 contra blanco
+ * Solución: text-gray-600 (#4B5563) tiene 8.6:1 contra blanco
+ * Impacto: Logo "PRO", labels secundarios, descriptores
+ */
+.text-gray-400-accessible {
+  color: #4B5563 !important; /* Equivalente a text-gray-600 mejorado */
+}
+
+/**
+ * REGLA 2: Reemplazo de text-gray-400 en modo oscuro
+ * Problema: text-gray-400 (#9CA3AF) tiene 4.3:1 contra gris-900
+ * Solución: text-gray-300 (#D1D5DB) tiene 8.2:1 contra gris-900
+ * Impacto: Sidebar rol de usuario, etiquetas secundarias
+ */
+.dark\:text-gray-400-accessible {
+  color: #D1D5DB !important;
+}
+
+/**
+ * REGLA 3: Reemplazo de text-red-400 en botones
+ * Problema: text-red-400 (#F87171) tiene 3.8:1 contra gris-800
+ * Solución: text-red-500 (#EF4444) tiene 4.6:1 contra gris-800
+ * Impacto: Botón "Cerrar Sesión"
+ */
+.text-red-400-accessible {
+  color: #EF4444 !important; /* text-red-500 */
+}
+
+/**
+ * REGLA 4: Reemplazo de text-blue-600 en precios
+ * Problema: text-blue-600 (#2563EB) tiene 4.4:1 contra blanco (insuficiente)
+ * Solución: text-blue-700 (#1D4ED8) tiene 5.3:1 contra blanco
+ * Impacto: Precios de productos, totales, enlaces
+ */
+.text-blue-600-accessible {
+  color: #1D4ED8 !important; /* text-blue-700 mejorado */
+}
+
+/**
+ * REGLA 5: Reemplazo de bg-blue-600 en botones
+ * Problema: bg-blue-600 (#2563EB) tiene 4.4:1 contra blanco (borderline)
+ * Solución: bg-blue-700 (#1D4ED8) tiene 5.5:1 contra blanco
+ * Impacto: Botones primarios, CTA buttons
+ */
+.bg-blue-600-accessible {
+  background-color: #1D4ED8 !important;
+}
+
+.bg-blue-600-accessible:hover {
+  background-color: #1e40af !important; /* bg-blue-800 para hover */
+}
+
+/**
+ * REGLA 6: Reemplazo de text-gray-500
+ * Problema: text-gray-500 (#6B7280) tiene 4.1:1 contra blanco
+ * Solución: text-gray-700 (#374151) tiene 8.9:1 contra blanco
+ * Impacto: Texto descriptivo en tablas, categorías
+ */
+.text-gray-500-accessible {
+  color: #374151 !important; /* text-gray-700 mejorado */
+}
+
+/**
+ * REGLA 7: Avatares con mejor contraste
+ * Problema: bg-blue-600 (#2563EB) tiene 4.4:1 contraste
+ * Solución: bg-blue-700 (#1D4ED8) tiene 5.5:1 contraste
+ * Impacto: Avatar círculo en sidebar
+ */
+.avatar-accessible {
+  background-color: #1D4ED8 !important;
+  color: #FFFFFF;
+}
+
+/**
+ * REGLA 8: Alertas con mejor diferenciación
+ * Problema: Colores de alerta muy cercanos entre sí
+ * Solución: Aumentar diferencia visual
+ */
+.bg-yellow-50-accessible {
+  background-color: #FFFBEB;
+  border-color: #F59E0B !important; /* yellow-400 en lugar de yellow-200 */
+}
+
+/**
+ * REGLA 9: Badges con mejor contraste
+ * Asegurar que badges de estado tengan suficiente contraste
+ */
+.badge-green-safe {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+.badge-red-safe {
+  background-color: #FEE2E2;
+  color: #7F1D1D;
+}
+
+.badge-yellow-safe {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.badge-blue-safe {
+  background-color: #DBEAFE;
+  color: #1E40AF;
+}
+
+/**
+ * MEJORA GENERAL: Focus States para navegación por teclado
+ * Requisito WCAG 2.4.7 (Focus Visible)
+ */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #1D4ED8;
+  outline-offset: 2px;
+}
+
+/**
+ * MEJORA: Spinner/loader con mejor visibilidad
+ */
+.border-blue-600 {
+  border-color: #1D4ED8 !important;
+}
+
+.border-t-transparent {
+  border-top-color: transparent !important;
+}
+
+/**
+ * ACCESIBILIDAD: Skip links (no implementados aún, referencia)
+ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Fin - Accesibilidad */

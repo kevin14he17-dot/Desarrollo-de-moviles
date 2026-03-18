@@ -1,0 +1,12 @@
+{
+  "appId": "com.minimarket.pos",
+  "appName": "MiniMarket POS",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "http",
+    "cleartext": true
+  },
+  "android": {
+    "allowMixedContent": true
+  }
+}
