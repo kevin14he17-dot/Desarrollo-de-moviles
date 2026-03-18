@@ -1,0 +1,52 @@
+{
+  "name": "minimarket-api",
+  "version": "1.0.0",
+  "description": "API REST para Sistema de Minimarket Intermedio PRO",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "init-db": "node scripts/init-db.js",
+    "test": "cross-env NODE_ENV=test jest --config jest.config.cjs --detectOpenHandles --runInBand",
+    "test:smoke": "cross-env NODE_ENV=test jest --config jest.config.cjs tests/backend/smoke.test.js --detectOpenHandles --runInBand",
+    "test:journey": "cross-env NODE_ENV=test jest --config jest.config.cjs tests/backend/journey.test.js --detectOpenHandles --runInBand",
+    "test:all": "cross-env NODE_ENV=test jest --config jest.config.cjs --detectOpenHandles --runInBand",
+    "test:coverage": "cross-env NODE_ENV=test jest --config jest.config.cjs --coverage --detectOpenHandles --runInBand",
+    "lint": "eslint src/",
+    "migrate": "node scripts/migrate.js"
+  },
+  "keywords": [
+    "pos",
+    "minimarket",
+    "inventory",
+    "cash-management",
+    "qr-payments"
+  ],
+  "author": "OpenCode",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.0",
+    "helmet": "^7.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "multer": "^2.0.2",
+    "mysql2": "^3.17.2",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.29.0",
+    "babel-jest": "^30.2.0",
+    "cross-env": "^10.1.0",
+    "dotenv-cli": "^11.0.0",
+    "eslint": "^8.40.0",
+    "jest": "^29.5.0",
+    "nodemon": "^3.0.0",
+    "supertest": "^6.3.3"
+  }
+}
